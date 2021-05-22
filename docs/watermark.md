@@ -10,7 +10,10 @@ There are three ways to specify a watermark image using environment variables:
 * `IMGPROXY_WATERMARK_URL`: watermark image URL.
 * `IMGPROXY_WATERMARK_DATA`: Base64-encoded image data. You can easily calculate it with the following snippet:
   ```bash
-  base64 tmp/watermark.webp | tr -d '\n'`.
+  # macos / bsd
+  base64 tmp/watermark.webp | tr -d '\n'
+  # linux / gnu
+  base64 -w 0 tmp/watermark.webp
   ```
 
 You can also specify the base opacity of watermark with `IMGPROXY_WATERMARK_OPACITY`.
